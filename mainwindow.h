@@ -10,6 +10,8 @@
 #include <QRgb>
 #include <QScreen>
 
+#include <QtCharts>
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -33,8 +35,13 @@ private slots:
 
     void on_pushButton_pressed();
 
+    void on_sliderLower_valueChanged(int value);
+
+    void on_sliderUpper_valueChanged(int value);
+
 private:
     Ui::MainWindow *ui;
+    QList<QColor> colors;
     QList<QList<int>> path;
 };
 #endif // MAINWINDOW_H
