@@ -29,19 +29,16 @@ protected:
     void mouseReleaseEvent(QMouseEvent *event);
 
 private slots:
-    //void on_pushButton_pressed();
-    //void on_pushButton_released();
-    //void on_pushButton_clicked();
-
     void on_pushButton_pressed();
-
-    void on_sliderLower_valueChanged(int value);
-
-    void on_sliderUpper_valueChanged(int value);
 
 private:
     Ui::MainWindow *ui;
     QList<QColor> colors;
     QList<QList<int>> path;
+    bool clicked;
+    QLineSeries *red, *green, *blue;
+    QScreen *screen;
+    QChart *chart;
+    int lbound, ubound;
 };
 #endif // MAINWINDOW_H

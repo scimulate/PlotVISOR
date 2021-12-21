@@ -159,20 +159,7 @@
     <item row="3" column="0">
      <layout class="QHBoxLayout" name="horizontalLayoutCalibration">
       <item>
-       <widget class="QSlider" name="sliderLower">
-        <property name="maximum">
-         <number>99</number>
-        </property>
-        <property name="value">
-         <number>99</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="invertedAppearance">
-         <bool>true</bool>
-        </property>
-       </widget>
+       <widget class="QComboBox" name="comboBox_2"/>
       </item>
       <item>
        <widget class="QLabel" name="label_2">
@@ -182,14 +169,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QSlider" name="sliderUpper">
-        <property name="value">
-         <number>99</number>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
+       <widget class="QComboBox" name="comboBox"/>
       </item>
      </layout>
     </item>
@@ -267,7 +247,7 @@ To Measure</string>
      </layout>
     </item>
     <item row="6" column="0">
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="labelValue">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
         <horstretch>0</horstretch>
@@ -282,6 +262,7 @@ To Measure</string>
       </property>
       <property name="font">
        <font>
+        <pointsize>20</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
