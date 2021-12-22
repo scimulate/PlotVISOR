@@ -10,15 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setWindowFlag(Qt::WindowStaysOnTopHint);
     mouseClicked = false;
-
-
-
-//    red = new QLineSeries();
-//    green = new QLineSeries();
-//    blue = new QLineSeries();
-
-//    chart = new QChart;
-//    ui->graphicsView->setChart(chart);
+    ui->statusbar->showMessage("PlotVISOR by Scimulate LLC", 5000);
 }
 
 MainWindow::~MainWindow()
@@ -61,34 +53,10 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
             }
         }
 
-        //if(ui->lineLegendMin->text().toDouble())
-
         double value = ui->lineLegendMin->text().toDouble();
         value += double(index-low)/double(high-low)*(ui->lineLegendMax->text().toDouble()-ui->lineLegendMin->text().toDouble());
 
-        ui->labelValue->setText(QString::number(value));
-
-
-        /*
-        while(!found && low < high)
-        {
-            diff = abs(pixelValue.red()-colors.at(low).red())
-                       + abs(pixelValue.green()-colors.at(low).green())
-                       + abs(pixelValue.blue()-colors.at(low).blue());
-            if(diff < THRESHOLD)
-            {
-                ui->labelValue->setText(QString::number(diff));
-                //ui->labelValue->setText("Found");
-                found = true;
-            }
-            low++;
-        }
-        if(low == high)
-        {
-            ui->labelValue->setText(QString::number(diff));
-            //ui->labelValue->setText("???");
-        }
-        */
+        ui->labelValue->setText(QString::number(value, 'e', 4));
     }
 }
 
@@ -116,9 +84,9 @@ void MainWindow::plot()
     for(int ct = low; ct < high; ct++)
     {
         //std::cout << path.at(ct).at(0) << '\t' << path.at(ct).at(1) << '\t' << colors.at(ct).red() << '\t' << colors.at(ct).green() << '\t' << colors.at(ct).blue() << std::endl;
-//        red->append(path.at(ct).at(ui->radioVert->isChecked()), colors.at(ct).red());
-//        green->append(path.at(ct).at(ui->radioVert->isChecked()), colors.at(ct).green());
-//        blue->append(path.at(ct).at(ui->radioVert->isChecked()), colors.at(ct).blue());
+        //red->append(path.at(ct).at(ui->radioVert->isChecked()), colors.at(ct).red());
+        //green->append(path.at(ct).at(ui->radioVert->isChecked()), colors.at(ct).green());
+        //blue->append(path.at(ct).at(ui->radioVert->isChecked()), colors.at(ct).blue());
         red->append(ct, colors.at(ct).red());
         green->append(ct, colors.at(ct).green());
         blue->append(ct, colors.at(ct).blue());

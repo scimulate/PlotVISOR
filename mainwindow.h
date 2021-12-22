@@ -1,8 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#define THRESHOLD 25
-
 #include <QApplication>
 #include <QList>
 #include <QMainWindow>
@@ -40,10 +38,6 @@ private:
     QList<QColor> colors;
     QList<QList<int>> path;
     bool mouseClicked;
-    //QLineSeries *red, *green, *blue;
-    //QScreen *screen;
-    //QChart *chart;
-    //int lbound, ubound;
     void plot();
 };
 #endif // MAINWINDOW_H

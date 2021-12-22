@@ -22,3 +22,24 @@ ui->graphicsView->setChart(chart);
 
         //ui->sliderUpper->setMaximum(path.length());
         //ui->sliderLower->setMaximum(std::min(path.length(), ui->sliderUpper->maximum()));
+
+/*
+while(!found && low < high)
+{
+    diff = abs(pixelValue.red()-colors.at(low).red())
+               + abs(pixelValue.green()-colors.at(low).green())
+               + abs(pixelValue.blue()-colors.at(low).blue());
+    if(diff < THRESHOLD)
+    {
+        ui->labelValue->setText(QString::number(diff));
+        //ui->labelValue->setText("Found");
+        found = true;
+    }
+    low++;
+}
+if(low == high)
+{
+    ui->labelValue->setText(QString::number(diff));
+    //ui->labelValue->setText("???");
+}
+*/
