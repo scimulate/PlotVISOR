@@ -63,7 +63,10 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 
         //if(ui->lineLegendMin->text().toDouble())
 
-        ui->labelValue->setText(QString::number(index));
+        double value = ui->lineLegendMin->text().toDouble();
+        value += double(index-low)/double(high-low)*(ui->lineLegendMax->text().toDouble()-ui->lineLegendMin->text().toDouble());
+
+        ui->labelValue->setText(QString::number(value));
 
 
         /*
