@@ -41,7 +41,7 @@ private:
     QList<QList<int>> path;
     bool mouseClicked;
     //QLineSeries *red, *green, *blue;
-    QScreen *screen;
+    //QScreen *screen;
     //QChart *chart;
     //int lbound, ubound;
     void plot();

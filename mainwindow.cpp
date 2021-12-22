@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowFlag(Qt::WindowStaysOnTopHint);
     mouseClicked = false;
 
-    screen = QGuiApplication::primaryScreen();
+
 
 //    red = new QLineSeries();
 //    green = new QLineSeries();
@@ -32,6 +32,7 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
                        + QString::number(event->globalY()) + ")";
     ui->labelPosition->setText(text);
 
+    QScreen *screen = QGuiApplication::primaryScreen();
     QPixmap something = screen->grabWindow(0, event->globalX(), event->globalY(), 1, 1);
     QColor pixelValue = something.toImage().pixel(0,0);
     ui->labelRGB->setPixmap(something);
@@ -43,7 +44,6 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
     }
     else
     {
-        bool found = false;
         int low = std::min(ui->spinLBound->value(), ui->spinUBound->value());
         int high = std::max(ui->spinLBound->value(), ui->spinUBound->value());
 
@@ -96,6 +96,10 @@ void MainWindow::on_pushButton_pressed()
 {
     path.clear();
     colors.clear();
+    ui->spinLBound->setValue(0);
+    ui->spinLBound->setMaximum(0);
+    ui->spinUBound->setValue(0);
+    ui->spinUBound->setMaximum(0);
     mouseClicked = true;
 }
 
