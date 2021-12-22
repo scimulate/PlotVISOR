@@ -9,30 +9,16 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowFlag(Qt::WindowStaysOnTopHint);
-    clicked = false;
+    mouseClicked = false;
 
     screen = QGuiApplication::primaryScreen();
 
-    red = new QLineSeries();
-    green = new QLineSeries();
-    blue = new QLineSeries();
+//    red = new QLineSeries();
+//    green = new QLineSeries();
+//    blue = new QLineSeries();
 
-    chart = new QChart;
-    ui->graphicsView->setChart(chart);
-    /*
-    QLineSeries *series = new QLineSeries();
-    series->append(0.0, 0.6);
-    series->append(1.0, 1.25);
-    series->append(2.5, 1.25);
-    QChart *chart = new QChart;
-    chart->addSeries(series);
-    chart->legend()->hide();
-    chart->setTitle("Test");
-    chart->createDefaultAxes();
-    QChartView *chartview = new QChartView(chart);
-
-    ui->graphicsView->setChart(chart);
-    */
+//    chart = new QChart;
+//    ui->graphicsView->setChart(chart);
 }
 
 MainWindow::~MainWindow()
@@ -42,17 +28,64 @@ MainWindow::~MainWindow()
 
 void MainWindow::mouseMoveEvent(QMouseEvent *event)
 {
-    QString text = "(" + QString::number(event->globalX()) + ", " + QString::number(event->globalY()) + ")";
+    QString text = "(" + QString::number(event->globalX()) + ", "
+                       + QString::number(event->globalY()) + ")";
     ui->labelPosition->setText(text);
 
     QPixmap something = screen->grabWindow(0, event->globalX(), event->globalY(), 1, 1);
     QColor pixelValue = something.toImage().pixel(0,0);
     ui->labelRGB->setPixmap(something);
 
-    if(clicked)
+    if(mouseClicked)
     {
         path.append(QList<int>{event->globalX(), event->globalY()});
         colors.append(pixelValue);
+    }
+    else
+    {
+        bool found = false;
+        int low = std::min(ui->spinLBound->value(), ui->spinUBound->value());
+        int high = std::max(ui->spinLBound->value(), ui->spinUBound->value());
+
+        int current;
+        int diff = 255;
+        int index = high;
+
+        for(int ct = low; ct < high; ct++)
+        {
+            current = abs(pixelValue.red()-colors.at(ct).red()) + abs(pixelValue.green()-colors.at(ct).green()) + abs(pixelValue.blue()-colors.at(ct).blue());
+            if(current < diff)
+            {
+                diff = current;
+                index = ct;
+            }
+        }
+
+        //if(ui->lineLegendMin->text().toDouble())
+
+        ui->labelValue->setText(QString::number(index));
+
+
+        /*
+        while(!found && low < high)
+        {
+            diff = abs(pixelValue.red()-colors.at(low).red())
+                       + abs(pixelValue.green()-colors.at(low).green())
+                       + abs(pixelValue.blue()-colors.at(low).blue());
+            if(diff < THRESHOLD)
+            {
+                ui->labelValue->setText(QString::number(diff));
+                //ui->labelValue->setText("Found");
+                found = true;
+            }
+            low++;
+        }
+        if(low == high)
+        {
+            ui->labelValue->setText(QString::number(diff));
+            //ui->labelValue->setText("???");
+        }
+        */
     }
 }
 
@@ -60,56 +93,65 @@ void MainWindow::on_pushButton_pressed()
 {
     path.clear();
     colors.clear();
-    red->clear();
-    green->clear();
-    blue->clear();
+    mouseClicked = true;
+}
 
-    clicked = true;
+void MainWindow::plot()
+{
+    QChart *chart = new QChart();
+    QLineSeries *red = new QLineSeries();
+    QLineSeries *green = new QLineSeries();
+    QLineSeries *blue = new QLineSeries();
+
+    int low = std::min(ui->spinLBound->value(), ui->spinUBound->value());
+    int high = std::max(ui->spinLBound->value(), ui->spinUBound->value());
+
+    for(int ct = low; ct < high; ct++)
+    {
+        //std::cout << path.at(ct).at(0) << '\t' << path.at(ct).at(1) << '\t' << colors.at(ct).red() << '\t' << colors.at(ct).green() << '\t' << colors.at(ct).blue() << std::endl;
+//        red->append(path.at(ct).at(ui->radioVert->isChecked()), colors.at(ct).red());
+//        green->append(path.at(ct).at(ui->radioVert->isChecked()), colors.at(ct).green());
+//        blue->append(path.at(ct).at(ui->radioVert->isChecked()), colors.at(ct).blue());
+        red->append(ct, colors.at(ct).red());
+        green->append(ct, colors.at(ct).green());
+        blue->append(ct, colors.at(ct).blue());
+    }
+
+    red->setPen(Qt::DashLine);
+    red->setColor(Qt::red);
+    red->setName("Red (---)");
+
+    green->setColor(Qt::green);
+    green->setName("Green (—)");
+
+    blue->setPen(Qt::DotLine);
+    blue->setColor(Qt::blue);
+    blue->setName("Blue (···)");
+
+    chart->addSeries(red);
+    chart->addSeries(green);
+    chart->addSeries(blue);
+    chart->createDefaultAxes();
+    ui->graphicsView->setChart(chart);
 }
 
 void MainWindow::mouseReleaseEvent(QMouseEvent *event)
 {
-    if(clicked)
+    if(mouseClicked)
     {
-//        ui->sliderUpper->setMaximum(path.length());
-//        ui->sliderUpper->setValue(ui->sliderUpper->maximum());
-
-//        ui->sliderLower->setMinimum(0);
-//        ui->sliderLower->setMaximum(ui->sliderUpper->value());
-//        ui->sliderLower->setValue(ui->sliderLower->minimum());
-
-        //ui->sliderUpper->setMaximum(path.length());
-        //ui->sliderLower->setMaximum(std::min(path.length(), ui->sliderUpper->maximum()));
-
-        std::cout << colors.length() << std::endl;
-        for(int ct = 0; ct < colors.length(); ct++)
-        {
-            //std::cout << path.at(ct).at(0) << '\t' << path.at(ct).at(1) << '\t' << colors.at(ct).red() << '\t' << colors.at(ct).green() << '\t' << colors.at(ct).blue() << std::endl;
-            red->append(ct, colors.at(ct).red());
-            green->append(ct, colors.at(ct).green());
-            blue->append(ct, colors.at(ct).blue());
-        }
-        //ui->labelPixel->setText(QString::number(path.length()));
-
-        red->setColor(Qt::red);
-        green->setColor(Qt::green);
-        blue->setColor(Qt::blue);
-
-        //QChart *chart = new QChart;
-        chart->addSeries(red);
-        chart->addSeries(green);
-        chart->addSeries(blue);
-        chart->legend()->hide();
-        //chart->setTitle("Test");
-        //chart->createDefaultAxes();
-        chart->createDefaultAxes();
-        //QChartView *chartview = new QChartView(chart);
-
-        ui->graphicsView->setChart(chart);
-        clicked = false;
-
-        lbound = 0;
-        ubound = path.length();
-        //ui->sliderLower->setMaximum(path.length());
+        ui->spinLBound->setMaximum(colors.length());
+        ui->spinUBound->setMaximum(colors.length());
+        ui->spinUBound->setValue(ui->spinUBound->maximum());
+        plot();
+        mouseClicked = false;
     }
+}
+void MainWindow::on_spinLBound_valueChanged(int arg1)
+{
+    plot();
+}
+
+void MainWindow::on_spinUBound_valueChanged(int arg1)
+{
+    plot();
 }

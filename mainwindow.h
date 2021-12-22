@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#define THRESHOLD 25
+
 #include <QApplication>
 #include <QList>
 #include <QMainWindow>
@@ -30,15 +32,18 @@ protected:
 
 private slots:
     void on_pushButton_pressed();
+    void on_spinLBound_valueChanged(int arg1);
+    void on_spinUBound_valueChanged(int arg1);
 
 private:
     Ui::MainWindow *ui;
     QList<QColor> colors;
     QList<QList<int>> path;
-    bool clicked;
-    QLineSeries *red, *green, *blue;
+    bool mouseClicked;
+    //QLineSeries *red, *green, *blue;
     QScreen *screen;
-    QChart *chart;
-    int lbound, ubound;
+    //QChart *chart;
+    //int lbound, ubound;
+    void plot();
 };
 #endif // MAINWINDOW_H
