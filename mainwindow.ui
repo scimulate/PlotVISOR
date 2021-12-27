@@ -399,7 +399,7 @@
          </font>
         </property>
         <property name="text">
-         <string>Set Legend Range:</string>
+         <string>Set Legend Increments:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
