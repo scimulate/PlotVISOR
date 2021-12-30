@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>BoltGenerator</Name>
+    <Version>v2021.0</Version>
+    <Title>Installation</Title>
+    <Publisher>Scimulate LLC</Publisher>
+    <StartMenuDir>Scimulate LLC</StartMenuDir>
+    <TargetDir>C:\Program Files\Scimulate LLC\BoltGenerator\</TargetDir>
+    <InstallerWindowIcon>Scimulate.png</InstallerWindowIcon>
+    <InstallerApplicationIcon>Scimulate.png</InstallerApplicationIcon>
+    <Watermark>ScimulateLogoFull.png</Watermark>
+    <RunProgram>@TargetDir@\BoltGeneratorGUI.exe</RunProgram>
+</Installer>

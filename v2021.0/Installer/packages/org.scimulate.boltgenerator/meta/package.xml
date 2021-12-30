@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>BoltGenerator</DisplayName>
+    <Description>An automated CAD creation tool.</Description>
+    <Version>v2021.0</Version>
+    <ReleaseDate>2021-12-14</ReleaseDate>
+    <Default>true</Default>
+    <Script>installscript.qs</Script>
+    <Licenses>
+        <License name="GNU General Public License Version 3" file="license.txt" />
+    </Licenses>
+</Package>
