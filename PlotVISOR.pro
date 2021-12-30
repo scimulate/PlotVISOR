@@ -33,3 +33,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES += \
     Scimulate.svg \
     garbage.txt
+
+RESOURCES += \
+    resource.qrc

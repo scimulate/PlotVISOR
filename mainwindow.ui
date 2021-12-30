@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>PlotVISOR v2021.0</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/Images/Images/Scimulate.svg</normaloff>:/Images/Images/Scimulate.svg</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="3" column="0">
@@ -60,7 +64,6 @@
           </property>
           <property name="font">
            <font>
-            <weight>75</weight>
             <bold>true</bold>
             <underline>true</underline>
            </font>
@@ -83,7 +86,6 @@
           </property>
           <property name="font">
            <font>
-            <weight>75</weight>
             <bold>true</bold>
             <underline>true</underline>
            </font>
@@ -221,7 +223,6 @@
         </property>
         <property name="font">
          <font>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -240,7 +241,6 @@
         </property>
         <property name="font">
          <font>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -263,7 +263,6 @@
         </property>
         <property name="font">
          <font>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -294,7 +293,6 @@
         </property>
         <property name="font">
          <font>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -367,7 +365,6 @@
        <widget class="QLabel" name="label_4">
         <property name="font">
          <font>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -399,7 +396,6 @@
         <property name="font">
          <font>
           <pointsize>11</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -434,7 +430,6 @@
         </property>
         <property name="font">
          <font>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -465,7 +460,6 @@
         </property>
         <property name="font">
          <font>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -549,6 +543,8 @@
    <header>QtCharts</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
