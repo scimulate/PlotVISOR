@@ -33,6 +33,10 @@ private slots:
     void on_spinLBound_valueChanged(int arg1);
     void on_spinUBound_valueChanged(int arg1);
 
+    void on_action_Exit_triggered();
+
+    void on_actionAbout_Qt_triggered();
+
 private:
     Ui::MainWindow *ui;
     QList<QColor> colors;

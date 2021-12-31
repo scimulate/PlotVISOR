@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowFlag(Qt::WindowStaysOnTopHint);
     mouseClicked = false;
     ui->statusbar->showMessage("PlotVISOR by Scimulate LLC", 5000);
+
+
 }
 
 MainWindow::~MainWindow()
@@ -145,3 +147,9 @@ void MainWindow::on_spinUBound_valueChanged(int arg1)
         plot();
     }
 }
+
+void MainWindow::on_action_Exit_triggered()
+{
+    close();
+}
+
