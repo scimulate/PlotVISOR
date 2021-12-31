@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>425</width>
+    <width>450</width>
     <height>500</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>425</width>
+    <width>450</width>
     <height>500</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>425</width>
+    <width>450</width>
     <height>500</height>
    </size>
   </property>
@@ -43,6 +43,7 @@
         </property>
         <property name="font">
          <font>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -61,6 +62,7 @@
         </property>
         <property name="font">
          <font>
+          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
@@ -88,6 +90,7 @@
           </property>
           <property name="font">
            <font>
+            <weight>75</weight>
             <bold>true</bold>
             <underline>true</underline>
            </font>
@@ -110,6 +113,7 @@
           </property>
           <property name="font">
            <font>
+            <weight>75</weight>
             <bold>true</bold>
             <underline>true</underline>
            </font>
@@ -261,8 +265,15 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="maximumSize">
+         <size>
+          <width>20</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="font">
          <font>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -287,17 +298,18 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>200</width>
+          <width>205</width>
           <height>16777215</height>
          </size>
         </property>
         <property name="font">
          <font>
+          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
         <property name="text">
-         <string>  Trim Calibration Curve:</string>
+         <string>Trim Calibration Curve:</string>
         </property>
        </widget>
       </item>
@@ -359,7 +371,7 @@
     <item row="5" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="spacing">
-       <number>0</number>
+       <number>6</number>
       </property>
       <item>
        <widget class="QLabel" name="label_5">
@@ -369,8 +381,15 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="maximumSize">
+         <size>
+          <width>20</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="font">
          <font>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -389,7 +408,7 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>160</width>
+          <width>155</width>
           <height>0</height>
          </size>
         </property>
@@ -401,11 +420,12 @@
         </property>
         <property name="font">
          <font>
+          <weight>50</weight>
           <bold>false</bold>
          </font>
         </property>
         <property name="text">
-         <string>    Set Legend Increments:</string>
+         <string>Set Legend Increments:</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -448,12 +468,25 @@
     <item row="6" column="0">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
-       <number>2</number>
+       <number>6</number>
       </property>
       <item>
        <widget class="QLabel" name="label_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>20</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="font">
          <font>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -478,13 +511,14 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>16777215</width>
+          <width>395</width>
           <height>20</height>
          </size>
         </property>
         <property name="font">
          <font>
           <pointsize>11</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -511,25 +545,10 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>425</width>
+     <width>450</width>
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_File">
-    <property name="title">
-     <string>&amp;File</string>
-    </property>
-    <addaction name="action_Exit"/>
-   </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="title">
-     <string>&amp;Help</string>
-    </property>
-    <addaction name="action_About"/>
-    <addaction name="actionAbout_Qt"/>
-   </widget>
-   <addaction name="menu_File"/>
-   <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="action_Exit">

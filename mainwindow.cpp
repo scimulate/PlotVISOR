@@ -10,7 +10,21 @@ MainWindow::MainWindow(QWidget *parent)
     mouseClicked = false;
     ui->statusbar->showMessage("PlotVISOR by Scimulate LLC", 5000);
 
+    QMenu *fileMenu = ui->menubar->addMenu(tr("&File"));
+    QMenu *helpMenu = ui->menubar->addMenu(tr("&Help"));
 
+    const QIcon exitIcon = QIcon::fromTheme("application-exit");
+    QAction *exitAct = fileMenu->addAction(exitIcon,
+                                           tr("E&xit"),
+                                           this,
+                                           &QWidget::close);
+    exitAct->setStatusTip(tr("Close Application"));
+
+    QAction *aboutAct = helpMenu->addAction(tr("&About PlotVISOR..."), this, &MainWindow::About);
+    aboutAct->setStatusTip(tr("PlotVISOR is a visual assistant for interpreting contour plots..."));
+
+    QAction *aboutQtAct = helpMenu->addAction(tr("About &Qt.."), qApp, &QApplication::aboutQt);
+    aboutQtAct->setStatusTip(tr("PlotVISOR was developed using Qt technologies..."));
 }
 
 MainWindow::~MainWindow()
@@ -69,9 +83,14 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
             }
         }
 
-        ui->labelValue->setText(text.at(index) + " — " + text.at(index+1));
-
-        //ui->labelValue->setText(QString::number(steps.at(index), 'g', 4) + " — " + QString::number(steps.at(index+1), 'g', 4));
+        if(diff < 3.0*256.0/(N-1))
+        {
+            ui->labelValue->setText(text.at(index) + " — " + text.at(index+1));
+        }
+        else
+        {
+            ui->labelValue->setText("???");
+        }
     }
 }
 
@@ -148,8 +167,10 @@ void MainWindow::on_spinUBound_valueChanged(int arg1)
     }
 }
 
-void MainWindow::on_action_Exit_triggered()
+void MainWindow::About()
 {
-    close();
+    QMessageBox::about(this, tr("About Application"),
+                       tr("<b>PlotVISOR</b> is a visual assistant for interpreting contour plots. By following the instructions (1) to (4) in the program window, users can map the legend of any contour plot and use that mapping to interpret values.<br><br>"
+                          "Please note that some contour plots render with artificial lighting, such as those used when post-processing physics simulations. This will create notable differences between colors shown in the legend and elsewhere in the figure. PlotVISOR has been configured to accommodate mild lighting variation, but this may affect results by ±1 legend increment.<br><br>"
+                          "If \"???\" is shown, attempt to disable lighting enhancements within the host software and/or remap the calibration curve, if necessary."));
 }
-

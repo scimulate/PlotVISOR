@@ -4,6 +4,7 @@
 #include <QApplication>
 #include <QList>
 #include <QMainWindow>
+//#include <QMenuBar>
 #include <QMouseEvent>
 #include <QPoint>
 #include <QPixmap>
@@ -32,10 +33,7 @@ private slots:
     void on_pushButton_pressed();
     void on_spinLBound_valueChanged(int arg1);
     void on_spinUBound_valueChanged(int arg1);
-
-    void on_action_Exit_triggered();
-
-    void on_actionAbout_Qt_triggered();
+    void About();
 
 private:
     Ui::MainWindow *ui;
