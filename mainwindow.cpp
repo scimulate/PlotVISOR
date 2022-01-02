@@ -48,7 +48,7 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
         path.append(QList<int>{event->globalX(), event->globalY()});
         colors.append(pixelValue);
     }
-    else
+    else if(colors.length() > 0)
     {
         int low = std::min(ui->spinLBound->value(), ui->spinUBound->value());
         int high = std::max(ui->spinLBound->value(), ui->spinUBound->value());
@@ -57,17 +57,6 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 
         // Breakdown lineLegend into discrete legend values.
         QStringList text = ui->lineLegend->text().split(",");
-
-        /*
-        int N = text.at(2).toInt();
-        double step = (text.at(1).toDouble() - text.at(0).toDouble())/(N-1);
-
-        QList<double> steps;
-        for(int ct = 0; ct < N; ct++)
-        {
-            steps.push_back(text.at(0).toInt() + step*ct);
-        }
-        */
 
         int N = text.length();
 
@@ -170,7 +159,9 @@ void MainWindow::on_spinUBound_valueChanged(int arg1)
 void MainWindow::About()
 {
     QMessageBox::about(this, tr("About Application"),
-                       tr("<b>PlotVISOR</b> is a visual assistant for interpreting contour plots. By following the instructions (1) to (4) in the program window, users can map the legend of any contour plot and use that mapping to interpret values.<br><br>"
-                          "Please note that some contour plots render with artificial lighting, such as those used when post-processing physics simulations. This will create notable differences between colors shown in the legend and elsewhere in the figure. PlotVISOR has been configured to accommodate mild lighting variation, but this may affect results by ±1 legend increment.<br><br>"
-                          "If \"???\" is shown, attempt to disable lighting enhancements within the host software and/or remap the calibration curve, if necessary."));
+                       tr("<b>PlotVISOR</b> is a visual assistant for contour plots.<br><br>"
+                          "By following the instructions (1) to (4) in the program window, users can map the legend of any contour plot and use it to identify values otherwise difficult to interpret.<br><br>"
+                          "If \"???\" is displayed instead of a valid result, disable lighting enhancements (within your host software) and/or remap the calibration curve. PlotVISOR has been configured to accommodate mild lighting variation from rendering, but this may affect results by ±1 legend increment.<br><br>"
+                          "Please <a href=\"mailto:developers@scimulate.com\">contact us</a> to ask questions, report bugs, request features, or provide any other feedback.<br><br>"
+                          "Also, follow <a href=\"https://www.linkedin.com/company/scimulate-llc\">Scimulate LLC</a> on LinkedIn!"));
 }

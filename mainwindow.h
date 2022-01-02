@@ -30,13 +30,13 @@ protected:
     void mouseReleaseEvent(QMouseEvent *event);
 
 private slots:
-    void Calibrate();
+    //void Calibrate();
     void on_pushButton_pressed();
     void on_spinLBound_valueChanged(int arg1);
     void on_spinUBound_valueChanged(int arg1);
     void About();
 
-    void on_pushButton_clicked();
+    //void on_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

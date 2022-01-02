@@ -130,3 +130,18 @@ for(int ct = low; ct < high; ct++)
 //value += double(index-low)/double(high-low)*(ui->lineLegendMax->text().toDouble()-ui->lineLegendMin->text().toDouble());
 
 //ui->labelValue->setText(QString::number(value, 'e', 4));
+
+
+/*
+int N = text.at(2).toInt();
+double step = (text.at(1).toDouble() - text.at(0).toDouble())/(N-1);
+
+QList<double> steps;
+for(int ct = 0; ct < N; ct++)
+{
+    steps.push_back(text.at(0).toInt() + step*ct);
+}
+*/
+
+
+"Please note that some contour plots render with artificial lighting, such as those used when post-processing physics simulations. This will create notable differences between colors shown in the legend and elsewhere in the figure. PlotVISOR has been configured to accommodate mild lighting variation, but this may affect results by ±1 legend increment.<br><br>"
