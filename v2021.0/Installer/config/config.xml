@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Installer>
-    <Name>BoltGenerator</Name>
+    <Name>PlotVISOR</Name>
     <Version>v2021.0</Version>
     <Title>Installation</Title>
     <Publisher>Scimulate LLC</Publisher>
     <StartMenuDir>Scimulate LLC</StartMenuDir>
-    <TargetDir>C:\Program Files\Scimulate LLC\BoltGenerator\</TargetDir>
+    <TargetDir>C:\Program Files\Scimulate LLC\PlotVISOR\</TargetDir>
     <InstallerWindowIcon>Scimulate.png</InstallerWindowIcon>
     <InstallerApplicationIcon>Scimulate.png</InstallerApplicationIcon>
     <Watermark>ScimulateLogoFull.png</Watermark>
-    <RunProgram>@TargetDir@\BoltGeneratorGUI.exe</RunProgram>
+    <RunProgram>@TargetDir@\PlotVISOR.exe</RunProgram>
 </Installer>

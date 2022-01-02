@@ -85,11 +85,11 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 
         if(diff < 3.0*256.0/(N-1))
         {
-            ui->labelValue->setText(text.at(index) + " — " + text.at(index+1));
+            ui->pushButton_2->setText(text.at(index) + " — " + text.at(index+1));
         }
         else
         {
-            ui->labelValue->setText("???");
+            ui->pushButton_2->setText("???");
         }
     }
 }
