@@ -2,11 +2,11 @@
 <Package>
     <DisplayName>PlotVISOR</DisplayName>
     <Description>A visual assistant for interpreting contour plots.</Description>
-    <Version>v2021.0</Version>
-    <ReleaseDate>2021-12-31</ReleaseDate>
+    <Version>v2022.0</Version>
+    <ReleaseDate>2022-01-07</ReleaseDate>
     <Default>true</Default>
     <Script>installscript.qs</Script>
     <Licenses>
-        <License name="GNU General Public License Version 3" file="license.txt" />
+        <License name="End-User License Agreement (EULA)" file="license.txt" />
     </Licenses>
 </Package>
