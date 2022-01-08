@@ -37,9 +37,8 @@ Component.prototype.createOperations = function()
     component.createOperations();
 
     if (systemInfo.productType === "windows") {
-        component.addOperation("CreateShortcut", "@TargetDir@/PlotVISOR.exe", "@StartMenuDir@/PlotVISOR.lnk",
-            "workingDirectory=@TargetDir@", "iconPath=@TargetDir@/Scimulate.png", "iconId=2", "description=Launch PlotVISOR");
-//"iconPath=%SystemRoot%/system32/SHELL32.dll",
-//            "iconId=2", "description=Open README file"
+	component.addOperation("CreateShortcut", "@TargetDir@/PlotVISOR.exe", "@StartMenuDir@/PlotVISOR.lnk", "workingDirectory=@TargetDir@", "iconPath=@TargetDir@/Scimulate.png", "description=Launch PlotVISOR");
     }
 }
+
+// "iconId=2",

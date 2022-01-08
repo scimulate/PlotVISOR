@@ -6,7 +6,6 @@
     <Publisher>Scimulate LLC</Publisher>
     <StartMenuDir>Scimulate LLC</StartMenuDir>
     <TargetDir>C:\Program Files\Scimulate LLC\PlotVISOR\</TargetDir>
-    <InstallerWindowIcon>Scimulate.svg</InstallerWindowIcon>
-    <InstallerApplicationIcon>Scimulate.svg</InstallerApplicationIcon>
+    <InstallerWindowIcon>@TargetDir@\Scimulate.png</InstallerWindowIcon>
     <RunProgram>@TargetDir@\PlotVISOR.exe</RunProgram>
 </Installer>

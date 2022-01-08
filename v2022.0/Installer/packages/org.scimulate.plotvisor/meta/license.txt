@@ -1,5 +1,3 @@
-End-User License Agreement (EULA) of PlotVISOR
-
 This End-User License Agreement ("EULA") is a legal agreement between you and Scimulate LLC.
 
 This EULA agreement governs your acquisition and use of our PlotVISOR software ("Software") directly from Scimulate LLC or indirectly through a Scimulate LLC authorized reseller or distributor (a "Reseller").
