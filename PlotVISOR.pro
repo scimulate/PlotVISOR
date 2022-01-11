@@ -36,3 +36,5 @@ DISTFILES += \
 
 RESOURCES += \
     resource.qrc
+
+RC_ICONS = Images/Scimulate.ico

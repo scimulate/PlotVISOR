@@ -25,10 +25,6 @@
   <property name="windowTitle">
    <string>PlotVISOR v2022.0</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="resource.qrc">
-    <normaloff>:/Images/Images/Scimulate.svg</normaloff>:/Images/Images/Scimulate.svg</iconset>
-  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
@@ -519,8 +515,6 @@
    <header>QtCharts</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="resource.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
