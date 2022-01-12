@@ -162,6 +162,7 @@ void MainWindow::About()
                        tr("<b>PlotVISOR</b> is a visual assistant for contour plots.<br><br>"
                           "By following the instructions (1) to (4) in the program window, users can map the legend of any contour plot and use it to identify values otherwise difficult to interpret.<br><br>"
                           "If \"???\" is displayed instead of a valid result, disable lighting enhancements (within your host software) and/or remap the calibration curve. PlotVISOR has been configured to accommodate mild lighting variation from rendering, but this may affect results by ±1 legend increment.<br><br>"
-                          "Please <a href=\"mailto:developers@scimulate.com\">contact us</a> to ask questions, report bugs, request features, or provide any other feedback.<br><br>"
-                          "Also, follow <a href=\"https://www.linkedin.com/company/scimulate-llc\">Scimulate LLC</a> on LinkedIn!"));
+                          "Visit Scimulate LLC on our <a href=\"https://www.scimulate.com\">website</a> and follow us on <a href=\"https://www.linkedin.com/company/scimulate-llc\">LinkedIn</a>! Please contact us to ask questions, report bugs, request features, or provide any other feedback.<br><br>"
+                          "Copyright (c) 2022 Scimulate LLC <br><br>"
+                          "Scimulate, \"Solving the Unsolved\", and the Scimulate logos are trademarks of Scimulate LLC."));
 }
