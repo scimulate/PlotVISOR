@@ -25,6 +25,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     QAction *aboutQtAct = helpMenu->addAction(tr("About &Qt.."), qApp, &QApplication::aboutQt);
     aboutQtAct->setStatusTip(tr("PlotVISOR was developed using Qt technologies..."));
+
+    QMessageBox *msgbox;
+    msgbox->about(this, tr("PlotVISOR 2022.0 (Evaluation Version)"), tr("Scimulate LLC has released PlotVISOR as freeware. If you find this software useful, please consider purchasing on our <a href=\"https://www.scimulate.com/products/p/plotvisor\">website</a> to remove this message."));
 }
 
 MainWindow::~MainWindow()

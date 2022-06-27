@@ -23,7 +23,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>PlotVISOR v2022.0</string>
+   <string>PlotVISOR v2022.0 (Evaluation Version)</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/Images/Images/Scimulate.ico</normaloff>:/Images/Images/Scimulate.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -50,6 +54,7 @@
             <property name="font">
              <font>
               <pointsize>11</pointsize>
+              <weight>75</weight>
               <bold>true</bold>
               <underline>true</underline>
              </font>
@@ -73,6 +78,7 @@
             <property name="font">
              <font>
               <pointsize>11</pointsize>
+              <weight>75</weight>
               <bold>true</bold>
               <underline>true</underline>
              </font>
@@ -115,6 +121,7 @@
             <property name="font">
              <font>
               <pointsize>11</pointsize>
+              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -221,6 +228,7 @@
         <property name="font">
          <font>
           <pointsize>11</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -240,6 +248,7 @@
         <property name="font">
          <font>
           <pointsize>11</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -284,6 +293,7 @@
             <property name="font">
              <font>
               <pointsize>11</pointsize>
+              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -315,6 +325,7 @@
             <property name="font">
              <font>
               <pointsize>11</pointsize>
+              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -361,6 +372,7 @@
               <property name="font">
                <font>
                 <pointsize>11</pointsize>
+                <weight>75</weight>
                 <bold>true</bold>
                </font>
               </property>
@@ -395,6 +407,7 @@
               <property name="font">
                <font>
                 <pointsize>11</pointsize>
+                <weight>75</weight>
                 <bold>true</bold>
                </font>
               </property>
@@ -428,6 +441,7 @@
             <property name="font">
              <font>
               <pointsize>11</pointsize>
+              <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
@@ -463,6 +477,7 @@
         <property name="font">
          <font>
           <pointsize>11</pointsize>
+          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -515,6 +530,8 @@
    <header>QtCharts</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
