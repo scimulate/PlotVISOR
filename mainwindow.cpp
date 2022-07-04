@@ -25,6 +25,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QAction *aboutQtAct = helpMenu->addAction(tr("About &Qt.."), qApp, &QApplication::aboutQt);
     aboutQtAct->setStatusTip(tr("PlotVISOR was developed using Qt technologies..."));
+
 }
 
 MainWindow::~MainWindow()
